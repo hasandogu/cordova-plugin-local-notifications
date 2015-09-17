@@ -60,12 +60,15 @@ exports.applyPlatformSpecificOptions = function () {
 
     switch (device.platform) {
     case 'Android':
-        defaults.icon      = 'res://icon';
-        defaults.smallIcon = 'res://ic_popup_reminder';
-        defaults.ongoing   = false;
-        defaults.autoClear = true;
-        defaults.color     = '000000';
-        defaults.led       = 'FFFFFF';
+        defaults.icon       = 'res://icon';
+        defaults.smallIcon  = 'res://ic_popup_reminder';
+        defaults.ongoing    = false;
+        defaults.autoClear  = true;
+        defaults.color      = '000000';
+        defaults.led        = 'FFFFFF';
+        defaults.ledOnMs    = 500;
+        defaults.ledOffMs   = 500;
+        defaults.visibility = 0;
         break;
     }
 

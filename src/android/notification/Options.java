@@ -175,6 +175,13 @@ public class Options {
     }
 
     /**
+     * Visibility for the local notification.
+     */
+    public int getVisibility() {
+        return options.optInt("visibility", 0);
+    }
+	
+    /**
      * ongoing flag for local notifications.
      */
     public Boolean isOngoing() {
