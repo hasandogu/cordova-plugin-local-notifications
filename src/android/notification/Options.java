@@ -289,19 +289,6 @@ public class Options {
     }	
 	
     /**
-     * @return
-     *      The notification color for Android 5.0 and up
-     */
-    public int getColor() {
-        String hex = options.optString("color", "000000");
-        int aRGB   = Integer.parseInt(hex,16);
-
-        aRGB += 0xFF000000;
-
-        return aRGB;
-    }
-	
-    /**
      * Sound file path for the local notification.
      */
     public Uri getSoundUri() {
