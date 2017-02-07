@@ -132,7 +132,7 @@ public class Builder {
                 .setVisibility(options.getVisibility());
 
         if (ledColor != 0) {
-            builder.setLights(ledColor, options.getLedOnMs(), options.getLedOffMs());
+            builder.setLights(ledColor, options.getLedOnTime(), options.getLedOffTime());
         }
 
         if (sound != null) {
