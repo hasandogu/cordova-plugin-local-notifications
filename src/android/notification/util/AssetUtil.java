@@ -27,6 +27,7 @@ import android.content.res.AssetManager;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.media.RingtoneManager;
 import android.net.Uri;
 import android.os.StrictMode;
 import android.util.Log;
@@ -51,6 +52,10 @@ public final class AssetUtil {
 
     // Name of the storage folder
     private static final String STORAGE_FOLDER = "/localnotification";
+
+    
+    // Placeholder URI for default sound
+    private static final String DEFAULT_SOUND = "res://platform_default";
 
     // Ref to the context passed through the constructor to access the
     // resources and app directory.
@@ -80,7 +85,7 @@ public final class AssetUtil {
      * @param path
      *      Path to path file
      */
-    Uri parseSound (String path) {
+    public Uri parseSound (String path) {
 
         if (path == null || path.isEmpty())
             return Uri.EMPTY;
@@ -98,7 +103,7 @@ public final class AssetUtil {
      *
      * @param path The given path.
      */
-    Uri parse (String path) {
+    public Uri parse (String path) {
         if (path == null || path.isEmpty())
             return Uri.EMPTY;
 	

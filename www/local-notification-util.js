@@ -68,9 +68,7 @@ exports.applyPlatformSpecificOptions = function () {
         defaults.ongoing    = false;
         defaults.autoClear  = true;
         defaults.color      = undefined;
-        defaults.led        = undefined;
-        defaults.ledOnTime  = 500;
-        defaults.ledOffTime = 500;
+        defaults.led        = { "on" : 500, "off" : 500 };
         defaults.visibility = 0;
         break;
     }

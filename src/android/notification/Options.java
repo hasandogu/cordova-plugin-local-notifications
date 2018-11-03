@@ -138,9 +138,7 @@ public final class Options {
         return getId().toString();
     }
 
-        Uri iconUri  = assets.parse(options.optString("icon", "icon"));
-        Uri soundUri = assets.parseSound(options.optString("sound", null));
-        
+       
     /**
      * Badge number for the local notification.
      */
@@ -191,14 +189,6 @@ public final class Options {
     }
 
     /**
-     * Visibility for the local notification.
-     */
-    public int getVisibility() {
-        return options.optInt("visibility", 0);
-    }
-	
-    /**
-     * ongoing flag for local notifications.
      * launch flag for the notification.
      */
     boolean isLaunchingApp() {
@@ -376,14 +366,7 @@ public final class Options {
         Bitmap bmp  = null;
 
         try {
-            Uri uri = Uri.parse(options.optString("iconUri"));
-			
-			if(uri.toString().isEmpty()) {
-				bmp = null;
-			}
-			else {
-				bmp = assets.getIconFromUri(uri);
-			}
+            bmp = assets.getIconFromUri(uri);
         } catch (Exception e){
             e.printStackTrace();
         }

@@ -117,6 +117,7 @@ public final class Builder {
         }
 
         Uri sound     = options.getSound();
+        int ledColor  = options.getLedColor();        
         Bundle extras = new Bundle();
 
         extras.putInt(Notification.EXTRA_ID, options.getId());
@@ -132,19 +133,18 @@ public final class Builder {
                 .setTicker(options.getText())
                 .setNumber(options.getNumber())
                 .setAutoCancel(options.isAutoClear())
-//                .setOngoing(options.isSticky())
-                .setOngoing(options.isOngoing())
+                .setOngoing(options.isSticky())
                 .setColor(options.getColor())
-                .setVisibility(options.getVisibility());
+                .setVisibility(options.getVisibility())
                 .setPriority(options.getPrio())
                 .setShowWhen(options.showClock())
                 .setUsesChronometer(options.showChronometer())
                 .setGroup(options.getGroup())
                 .setGroupSummary(options.getGroupSummary())
-                .setTimeoutAfter(options.getTimeout())
+                .setTimeoutAfter(options.getTimeout());
 
         if (ledColor != 0) {
-            builder.setLights(ledColor, options.getLedOnTime(), options.getLedOffTime());
+            builder.setLights(ledColor, options.getLedOn(), options.getLedOff());
         }
 
         if (sound != Uri.EMPTY && !isUpdate()) {
